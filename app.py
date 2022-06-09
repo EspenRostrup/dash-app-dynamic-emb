@@ -260,4 +260,4 @@ def update_graph(query_word, top_n, embeddings_time, fig_placement = [1,1], **kw
     return fig
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
