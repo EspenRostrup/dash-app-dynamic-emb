@@ -37,7 +37,7 @@ def blank_fig():
     return fig
 
 
-dw2v_kvs = load_data("dw2v")
+# dw2v_kvs = load_data("dw2v")
 aw2v_kvs = load_data("aw2v")
 
 app.layout = html.Div([
@@ -74,13 +74,13 @@ app.layout = html.Div([
         0,
         20,
         1,
-        value=10,
+        value=15,
         id='topn-slider'
     )]
     ),
     html.Div([html.H4('Type of embeddings'),
                 dcc.RadioItems(
-                ['AW2V', 'DW2V'],
+                ['AW2V'],
                 'AW2V',
                 id='emb-type',
                 labelStyle={'display': 'block'}),
@@ -93,8 +93,8 @@ app.layout = html.Div([
 def generate_layout(url,emb_type):
     if emb_type == "AW2V":
             options = list(aw2v_kvs[0].key_to_index.keys())
-    elif emb_type == "DW2V":
-        options = list(dw2v_kvs[0].key_to_index.keys())
+    # elif emb_type == "DW2V":
+    #     options = list(dw2v_kvs[0].key_to_index.keys())
     return html.Div([
         html.H4('Query Word'),
         dcc.Dropdown(
