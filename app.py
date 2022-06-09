@@ -25,7 +25,7 @@ def load_data(emb_type:str):
         INTERVAL = [1867, 1920, 1950, 1980, 1995, 2010, 2022]
         timespans = list(zip(INTERVAL[:-1],INTERVAL[1:]))
         timespans = [f"{x}_{y}" for x,y in timespans]
-    kvs = [KeyedVectors.load(f"kw/{emb_type}_emb_{x}.kv") for x in timespans]
+    kvs = [KeyedVectors.load(f"kv/{emb_type}/{emb_type}_emb_{x}.kv") for x in timespans]
     return kvs
 
 def blank_fig():
